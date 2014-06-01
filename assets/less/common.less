@@ -19,6 +19,8 @@ body {
 	font-size: 1em;
 }
 
+.font-face('dejavusansmono', '../fonts');
+
 h1 {
 	/*margin: 1.4rem 0;*/
 	margin: 1rem 0;
@@ -70,15 +72,35 @@ p {
 
 header, .main, footer {
 	padding: @padding;
+	width: 100%;
 }
 
 header {
 	background-color: #f1f1f1;
 }
 
+.main {
+	
+}
+
+footer {
+	background-color: #f1f1f1;
+}
+
 .container {
 	max-width: @max_width;
 	margin: 0 auto;
+}
+
+.icons {
+	
+}
+
+i[data-icon] {
+	font-family: dejavusansmono, Helvetica, Arial, sans-serif;
+	display: block;
+	font-size: 2rem;
+	line-height: 2.4rem;
 }
 
 /* media queries */
