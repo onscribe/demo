@@ -9,8 +9,6 @@ var env = {
 };
 
 var config = {
-	version: "4.04.001",
-	//
 	isDev: ( env.localhost.indexOf( window.location.hostname ) > -1 ),
 	isProd: ( env.production.indexOf( window.location.hostname ) > -1 ),
 	isStaging: ( env.staging.indexOf( window.location.hostname ) > -1 ),
@@ -43,15 +41,6 @@ var config = {
 			backbone: [
 				"//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min"
 			],
-			"backbone.ui.sidenav": [
-				"/assets/js/libs/backbone.ui.sidenav"
-			],
-			"backbone.session": [
-				"/assets/js/libs/backbone.session"
-			],
-			"backbone.ui.modal": [
-				"/assets/js/libs/backbone.ui.modal"
-			],
 			ga: "//www.google-analytics.com/analytics"
 		},
 		shim: {
@@ -76,28 +65,6 @@ var config = {
 					"jquery"
 				],
 				exports: "Backbone"
-			},
-			"backbone.session": {
-				deps: [
-					"backbone"
-				]
-			},
-			"backbone.ui.sidenav": {
-				deps: [
-					"backbone"
-				]
-			},
-			"backbone.ui.modal": {
-				deps: [
-					"backbone",
-					"underscore",
-					"jquery"
-				]
-			},
-			"libs/backbone.extender": {
-				deps: [
-					"backbone"
-				]
 			}
 		},
 		deps: [
@@ -106,9 +73,7 @@ var config = {
 			"jquery",
 			"underscore",
 			"handlebars",
-			"backbone",
-			"libs/backbone.extender",
-			"libs/backbone.analytics"
+			"backbone"
 		],
 		callback: function(){
 			window.init();
@@ -117,8 +82,6 @@ var config = {
 }
 
 // APIs
-//STRIPE
-//Stripe.setPublishableKey('pk_test_gbAflR6f02Yy7C3q8XOdiijn');
 
 // flags
 if(typeof DEBUG == "undefined") DEBUG = config.isDev; // condition is localhost...
