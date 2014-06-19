@@ -1,6 +1,6 @@
-define(["app/layouts/common"], function( Common ){
+define(["backbone.app", "app/layouts/common"], function( APP, Common ){
 
-	return Common.extend({
+	var Layout = Common.extend({
 
 		name: "default",
 
@@ -8,5 +8,10 @@ define(["app/layouts/common"], function( Common ){
 			classNames: ""
 		}
 	});
+
+	// save in the global namespace
+	APP.Layouts.Default = Layout;
+
+	return Layout;
 
 });

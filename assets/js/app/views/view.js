@@ -1,10 +1,15 @@
-define(["backbone"], function( Backbone ){
+define(["backbone", "backbone.app"], function( Backbone, APP ){
 
-	return Backbone.View.extend({
+	var View = Backbone.View.extend({
 
 		options: {
 
 		}
 	});
+
+	// save in the global namespace
+	APP.Views.Default = View;
+
+	return View;
 
 });

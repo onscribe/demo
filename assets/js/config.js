@@ -19,6 +19,10 @@ var config = {
 		facebook: "",
 		twitter: ""
 	},
+	app: {
+		require: true,
+		pushState: false
+	},
 	// require config
 	js: {
 		baseUrl: "/assets/js/",
@@ -41,7 +45,10 @@ var config = {
 			backbone: [
 				"//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min"
 			],
-			ga: "//www.google-analytics.com/analytics"
+			ga: "//www.google-analytics.com/analytics",
+			"backbone.app": [
+				"/assets/js/libs/backbone.app"
+			],
 		},
 		shim: {
 			common: {
@@ -65,6 +72,9 @@ var config = {
 					"jquery"
 				],
 				exports: "Backbone"
+			},
+			"backbone.app": {
+				exports: "APP" // global scope not required?
 			}
 		},
 		deps: [
@@ -73,7 +83,8 @@ var config = {
 			"jquery",
 			"underscore",
 			"handlebars",
-			"backbone"
+			"backbone",
+			"backbone.app"
 		],
 		callback: function(){
 			window.init();

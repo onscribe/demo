@@ -5,10 +5,13 @@ require.config( config.js );
 function init(){
 	// require might execute init before the document is ready...
 	//$(document).ready(function(){
-	require(["app/controllers/default"], function(Router){
+	require(["backbone.app"], function(APP){
 
-		app = new Router();
-		Backbone.history.start({ pushState: true });
+		APP(config.app, function( Controller ){
+			app = new Controller();
+			// update Backbone options
+			Backbone.history.start({ pushState: config.app.pushState });
+		});
 
 	});
 	//});

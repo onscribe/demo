@@ -1,10 +1,11 @@
 define([
 	"backbone",
+	"backbone.app",
 	"app/controllers/common",
 	"app/layouts/default"
-	], function( Backbone, Common, LayoutDefault ){
+	], function( Backbone, APP, Common, LayoutDefault ){
 
-	return Common.extend({
+	var Router = Common.extend({
 
 		routes: {
 			"": "index"
@@ -16,9 +17,13 @@ define([
 			});
 
 			this.layout = new LayoutDefault({ data: this.data });
-		},
+		}
 
-		
 	});
+
+	// save in the global namespace
+	APP.Routers.Default = Router;
+
+	return Router;
 
 });
