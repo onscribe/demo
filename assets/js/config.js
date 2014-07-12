@@ -46,6 +46,7 @@ var config = {
 				"//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min"
 			],
 			ga: "//www.google-analytics.com/analytics",
+			onscribe: "//onscri.be/embed",
 			"backbone.app": [
 				"/assets/js/libs/backbone.app"
 			],
@@ -80,6 +81,7 @@ var config = {
 		deps: [
 			"common",
 			"json3",
+			"onscribe",
 			"jquery",
 			"underscore",
 			"handlebars",
