@@ -1,16 +1,22 @@
-define(["backbone", "backbone.app"], function( Backbone, APP ){
+define(["backbone", "backbone.app", "app/views/header"], function( Backbone, APP, Header ){
 
-	return APP.Layout.extend({
-		/*
-		 // already part of Backbone APP...
-		el: "body",
+	var Parent = APP.Layout;
 
-		options: {
+	return Parent.extend({
 
-		},
+		initialize: function(options){
 
-		views: new Backbone.Model(),
-		*/
+			var data = options.data;
+
+			this.set({
+				header: new Header({
+					model: data.get("header")
+				})
+			});
+
+			return Parent.prototype.initialize.call(this, options);
+		}
+
 	});
 
 });

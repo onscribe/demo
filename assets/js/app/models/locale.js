@@ -6,18 +6,19 @@ define(["backbone"], function( Backbone ){
 
 		url: function(){
 			return (config.isDev)
-				? "/test/data/locale.json"
-				: "/test/data/locale.json"; //change this when the server has a is updated
+				//? "/test/data/locale.json"
+				//: "/test/data/locale.json"; //change this when the server has a is updated
 				//: "/api/locale/"+ this.options.lang;
 		},
 
 		options: {
-			autofetch: true,
+			autofetch: false,
 			lang: "en"
 		},
 
 		defaults: {
-			"header": {}
+			"header-index": "Spend a dollar and become a Supporter",
+			"header-home": "You're in!"
 		},
 
 		// move initialize to common model?

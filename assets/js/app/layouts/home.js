@@ -1,10 +1,10 @@
-define(["backbone.app", "app/layouts/common", "app/views/index"], function( APP, Common, Content ){
+define(["backbone.app", "app/layouts/common", "app/views/home"], function( APP, Common, Content ){
 
 	var Parent = Common;
 
 	var Layout = Parent.extend({
 
-		name: "default",
+		name: "home",
 
 		options: {
 			classNames: ""
@@ -21,7 +21,7 @@ define(["backbone.app", "app/layouts/common", "app/views/index"], function( APP,
 	});
 
 	// save in the global namespace
-	APP.Layouts.Default = Layout;
+	APP.Layouts.Home = Layout;
 
 	return Layout;
 
